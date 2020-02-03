@@ -18,6 +18,8 @@ public class Game extends JPanel {
     Ball ball = new Ball(this);
     // This goes to the Ball file and uses it, but this code it will be named ball, also the
 	Paddle paddle = new Paddle(this);
+	//
+	//Paddle2 paddle2 = new Paddle2(this);
 	int speed = 1;
 
 	public Game() {
@@ -52,6 +54,7 @@ public class Game extends JPanel {
 				RenderingHints.VALUE_ANTIALIAS_ON);
 		ball.paint(g2d);
 		paddle.paint(g2d);
+		//paddle2.paint(g2d);
 		
 		// Score
 		g2d.setColor(Color.GRAY);
@@ -71,7 +74,7 @@ public class Game extends JPanel {
 		JFrame frame = new JFrame("Mini Tennis");
 		Game game = new Game();
 		frame.add(game);
-		frame.setSize(300, 400);
+		frame.setSize(1000, 1000);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

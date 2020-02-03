@@ -3,22 +3,22 @@ import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.Color;
 
-public class Paddle {
-    // 1. Create a variable that will hold the Y axis of the paddle
-    //    remember the paddle needs to have a constant Y axis because it shouldnt move vertically
+public class Paddle2 {
+    // 1. Create a variable that will hold the Y axis of the Paddle2
+    //    remember the Paddle2 needs to have a constant Y axis because it shouldnt move vertically
     int Y = 350;
-    // 2. Create a variable to hold the width of the paddle.
+    // 2. Create a variable to hold the width of the Paddle2.
     int WIDTH = 100;
-    // 3. Create a variable to hold the height of the paddle.
+    // 3. Create a variable to hold the height of the Paddle2.
     int HEIGHT = 100;
     // create a variable for current speed
     int x = 0;
-    // create a variable for change in paddle velocity
+    // create a variable for change in Paddle2 velocity
     int xa = 2;
 
     private Game game;
 
-    public Paddle(Game game){
+    public Paddle2(Game game){
         this.game = game;
     }
 
@@ -36,9 +36,9 @@ public class Paddle {
     }
 
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_UP)
+        if (e.getKeyCode() == KeyEvent.VK_W)
             xa = -game.speed;
-        if (e.getKeyCode() == KeyEvent.VK_DOWN)
+        if (e.getKeyCode() == KeyEvent.VK_S)
             xa = game.speed;
     }
 

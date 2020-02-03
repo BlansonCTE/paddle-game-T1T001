@@ -30,6 +30,7 @@ class Ball{
             ya = -game.speed;
             y = game.paddle.getTopY() - DIAMETER;
             game.speed++;
+            
         }
 
             // Move ball
