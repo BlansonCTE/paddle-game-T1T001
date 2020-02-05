@@ -8,13 +8,13 @@ public class Paddle2 {
     //    remember the Paddle2 needs to have a constant Y axis because it shouldnt move vertically
     int Y = 350;
     // 2. Create a variable to hold the width of the Paddle2.
-    int WIDTH = 100;
+    int WIDTH = 20;
     // 3. Create a variable to hold the height of the Paddle2.
     int HEIGHT = 100;
     // create a variable for current speed
-    int x = 0;
+    int x = 950;
     // create a variable for change in Paddle2 velocity
-    int xa = 2;
+    int xa = 0;
 
     private Game game;
 
@@ -23,8 +23,8 @@ public class Paddle2 {
     }
 
     public void move() {
-        if (x + xa > 0 && x + xa < game.getWidth() - WIDTH)
-            x = x + xa;
+        if (Y + xa > 0 && Y + xa < game.getWidth() - WIDTH)
+            Y = Y + xa;
     }
 
     public void paint(Graphics2D g) {
