@@ -4,7 +4,7 @@ import java.awt.Color;
 
 class Ball{
     //initialize ball position and intitial velocity
-    int x = 0, y = 0, xa = 1, ya = 1;
+    int x = 500, y = 0, xa = 1, ya = 1;
     // Creat ball size
     private static final int DIAMETER = 30;
     private Game game;
@@ -14,23 +14,32 @@ class Ball{
     }
 
     void moveBall(){
-        // hits left wall
-        if (x + xa < 0)
-            xa = game.speed;
-        // hits right wall
-        if (x + xa > game.getWidth() - DIAMETER)
-            xa = -game.speed;
-        // hits top wall
-        if (y + ya < 0)
-            ya = game.speed;
-        // goes under paddle
-        else if (y + ya > game.getHeight() - DIAMETER)
-            game.gameOver();
+         // hits left wall
+         if (x + xa < 0)
+             game.gameOver();
+         // hits right wall
+         if (x + xa > game.getWidth() - DIAMETER)
+             game.gameOver();
+         // hits top wall
+         if (y + ya < 0)
+             ya = -game.speed;
+         // hits down wall
+         if (y + ya > game.getHeight() - DIAMETER)
+             xa = game.speed;
+
+
         if (collision()) {
-            ya = -game.speed;
-            y = game.paddle.getTopY() - DIAMETER;
-            game.speed++;
-            
+              xa *= -game.speed;
+              x += 5;
+              //game.speed++;
+                 
+        }
+
+         if (collision2()) {
+             xa *= -game.speed;
+             x -= 5;
+             //game.speed++;
+                
         }
 
             // Move ball
@@ -44,6 +53,11 @@ class Ball{
         }
         private boolean collision(){
             return game.paddle.getBounds().intersects(getBounds());
+
+        }
+
+        private boolean collision2(){
+            return game.paddle2.getBounds().intersects(getBounds());
 
         }
         public Rectangle getBounds(){
