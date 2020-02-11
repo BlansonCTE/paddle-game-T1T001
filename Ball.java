@@ -25,7 +25,10 @@ class Ball{
              ya = -game.speed;
          // hits down wall
          if (y + ya > game.getHeight() - DIAMETER)
-             xa = game.speed;
+             ya = -game.speed;
+
+         if (y + ya <0)
+             ya = game.speed;
 
 
         if (collision()) {

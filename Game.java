@@ -20,7 +20,7 @@ public class Game extends JPanel {
 	Paddle paddle = new Paddle(this);
 	Paddle2 paddle2 = new Paddle2(this);
 	
-	int speed = 5;
+	int speed = 1;
 
 	public Game() {
 		addKeyListener(new KeyListener() {
